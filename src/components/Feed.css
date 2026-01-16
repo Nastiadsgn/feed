@@ -1,0 +1,308 @@
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--brand-light);
+  color: #757575;
+}
+
+.filter-tab.active {
+  padding-left: 12px;
+  background: black;
+  color: white;
+}
+
+.filter-tab:hover:not(.active) {
+  background: #ebebeb;
+}
+
+.check-icon {
+  flex-shrink: 0;
+}
+
+.thread {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling - overlay on hover */
+.thread {
+  scrollbar-width: none; /* Firefox */
+}
+
+.thread::-webkit-scrollbar {
+  width: 6px;
+  position: absolute;
+  right: 0;
+}
+
+.thread::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thread::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.thread:hover {
+  scrollbar-width: thin; /* Firefox */
+}
+
+.thread:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.thread:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* New Chat Input */
+.new-chat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px 16px 24px;
+  position: sticky;
+  top: 0;
+  background: var(--background);
+  z-index: 10;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+}
+
+.new-chat-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: #d1d5db;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d1d5db;
+}
+
+.chat-avatar.placeholder {
+  background: var(--accent-blue);
+}
+
+/* Colored avatars by type - DataBao Inbox Style */
+.chat-avatar[data-type="metrics"] {
+  background: rgba(247, 95, 80, 0.2);
+  color: rgb(247, 95, 80);
+}
+
+.chat-avatar[data-type="kpis"] {
+  background: rgba(52, 199, 89, 0.2);
+  color: rgb(52, 199, 89);
+}
+
+.chat-avatar[data-type="reports"] {
+  background: rgba(0, 122, 255, 0.2);
+  color: rgb(0, 122, 255);
+}
+
+.chat-avatar[data-type="dashboards"] {
+  background: rgba(175, 82, 222, 0.2);
+  color: rgb(175, 82, 222);
+}
+
+.chat-avatar[data-type="insights"] {
+  background: rgba(255, 204, 0, 0.2);
+  color: rgb(255, 204, 0);
+}
+
+.new-chat-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  width: 100%;
+}
+
+.new-chat-input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.submit-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--background);
+  cursor: pointer;
+  color: var(--foreground);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.submit-btn:not(:disabled):hover {
+  background: black;
+  border-color: black;
+  color: white;
+}
+
+/* Feed Items */
+.feed-item {
+  display: flex;
+  gap: 3px;
+  padding: 16px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.feed-item:hover {
+  background-color: var(--secondary);
+}
+
+.feed-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.feed-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 9px;
+}
+
+.feed-item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.feed-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--foreground);
+}
+
+.feed-item-time {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #999;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--muted-foreground);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-btn:hover {
+  background: var(--secondary);
+  color: var(--foreground);
+}
+
+.feed-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feed-item-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--foreground);
+  padding-left: 9px;
+  padding-right: 56px;
+}
+
+.feed-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  font-size: 15px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 20px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  color: var(--foreground);
+}
+
+.action-btn.liked {
+  color: var(--accent-red);
+}
+
+.action-btn.share-btn span {
+  display: none;
+}
+
