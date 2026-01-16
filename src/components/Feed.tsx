@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowUp, MessageSquare, Heart, Share, MoreHorizontal } from 'lucide-react'
+import { ArrowUp, MessageSquare, Heart, MoreHorizontal } from 'lucide-react'
 import './Feed.css'
 
 interface FeedProps {
@@ -188,9 +188,6 @@ export default function Feed({ activeFilters, onFilterChange, onCardClick }: Fee
                   >
                     <Heart size={16} fill={likedItems.has(item.id) ? 'currentColor' : 'none'} />
                     <span>{item.likes + (likedItems.has(item.id) ? 1 : 0)}</span>
-                  </button>
-                  <button className="action-btn share-btn">
-                    <Share size={16} />
                   </button>
                 </div>
               </div>
