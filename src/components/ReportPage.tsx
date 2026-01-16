@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowLeft, ArrowUp, TrendingUp, TrendingDown, X, Plus, Sparkles, Heart, MessageCircle, Send } from 'lucide-react'
+import { ArrowLeft, ArrowUp, TrendingUp, TrendingDown, X, Plus, Sparkles, Heart, MessageSquare, Send } from 'lucide-react'
 import './ReportPage.css'
 
 interface ReportPageProps {
@@ -624,6 +624,10 @@ export default function ReportPage({ onBack }: ReportPageProps) {
         {/* Comments and Likes Section */}
         <section className="report-section engagement-section">
           <div className="engagement-actions">
+            <div className="comments-count">
+              <MessageSquare size={20} />
+              <span>{comments.length} comments</span>
+            </div>
             <button 
               className={`like-button ${isLiked ? 'liked' : ''}`}
               onClick={handleLikeToggle}
@@ -631,10 +635,6 @@ export default function ReportPage({ onBack }: ReportPageProps) {
               <Heart size={20} fill={isLiked ? 'currentColor' : 'none'} />
               <span>{likeCount} likes</span>
             </button>
-            <div className="comments-count">
-              <MessageCircle size={20} />
-              <span>{comments.length} comments</span>
-            </div>
           </div>
 
           <div className="comments-section">
