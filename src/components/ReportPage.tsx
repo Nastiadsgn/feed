@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowLeft, ArrowUp, TrendingUp, TrendingDown, X, Plus, Sparkles, Heart, MessageSquare, Send } from 'lucide-react'
+import { ArrowLeft, ArrowUp, TrendingUp, X, Plus, Sparkles, Heart, MessageSquare, Send } from 'lucide-react'
 import './ReportPage.css'
 
 interface ReportPageProps {

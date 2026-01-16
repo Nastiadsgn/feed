@@ -8,7 +8,7 @@ import './App.css'
 function App() {
   const [activeFilters, setActiveFilters] = useState<string[]>(['all'])
   const [showReport, setShowReport] = useState(false)
-  const [selectedReportId, setSelectedReportId] = useState<string | null>(null)
+  const [, setSelectedReportId] = useState<string | null>(null)
 
   const handleCardClick = (itemId: string) => {
     setSelectedReportId(itemId)
